@@ -1,9 +1,10 @@
 Turtle t;
-
+ int sizey = 80;
+ int sizex = 50;
 void setup() {
   size(600, 400); // the canvas size
   background(133,50,200); // a dark gray background
-
+  
   // Your high-level code goes here
   t = new Turtle(this);
  
@@ -62,17 +63,17 @@ void letterO(){
   t.right(180);
   t.forward(50);
   t.right(90);
-  t.forward(80);
+  t.forward(sizey);
   t.right(90);
   t.forward(50);
   t.right(90);
-  t.forward(80);
+  t.forward(sizey);
   t.right(90);
 }
 
 void letterS(){
   t.left(180);
-  t.forward(50);
+  t.forward(sizex);
   t.left(90);
   t.forward(40);
   t.left(90);
@@ -80,7 +81,7 @@ void letterS(){
   t.right(90);
   t.forward(40);
   t.right(90);
-  t.forward(50);
+  t.forward(sizex);
   t.right(180);
 }
 
