@@ -1,6 +1,5 @@
 Turtle t;
- int sizey = 80;
- int sizex = 50;
+
 void setup() {
   size(600, 400); // the canvas size
   background(133,50,200); // a dark gray background
@@ -8,35 +7,9 @@ void setup() {
   // Your high-level code goes here
   t = new Turtle(this);
  
-  t.x = 100;
-  t.y = 150;
-  letterG();
-  t.penUp();
-  t.x = 110; 
-  t.y = 150; 
-  t.penDown();
-  letterO();
-
-  // Draw "Slow"
-  t.penUp();
- t.y = 250; 
-  t.penDown();
-  letterS();
-  t.penUp(); 
- t.x = 150;
-  t.y = 250;
-  t.penDown();
-  letterL();
-  t.penUp(); 
- t.x = 220;
-  t.y = 250; 
-  t.penDown();
-  letterO();
-  t.penUp();
-  t.x = 300;
-  t.y = 250;
-  t.penDown();
-  letterW();
+ goSlow(80);
+  
+ 
 
   // End your high-level code here
 
@@ -46,61 +19,91 @@ void setup() {
 
 // Your methods can be defined down here
 
-void letterG(){
-  t.left(180);
-  t.forward(50);    
+void letterG(int size){
   t.left(90);
-  t.forward(80);     
+  t.forward(size);    
   t.left(90);
-  t.forward(50);     
+  t.forward(size);     
   t.left(90);
-  t.forward(40);      
+  t.forward(size);     
   t.left(90);
-  t.forward(25);     
+  t.forward(size);      
+  t.left(90);
+  t.forward(size);     
 }
 
-void letterO(){
+void letterO(int size){
+  t.right(90);
+  t.forward(size);
+  t.right(90);
+  t.forward(size);
+  t.right(90);
+  t.forward(size);
+  t.right(90);
+  t.forward(size);
+  t.right(90);
+}
+
+void letterS(int size){
+  t.left(180);
+  t.forward(size);
+  t.left(90);
+  t.forward(size);
+  t.left(90);
+  t.forward(size);
+  t.right(90);
+  t.forward(size);
+  t.right(90);
+  t.forward(size);
   t.right(180);
-  t.forward(50);
-  t.right(90);
-  t.forward(sizey);
-  t.right(90);
-  t.forward(50);
-  t.right(90);
-  t.forward(sizey);
-  t.right(90);
 }
 
-void letterS(){
-  t.left(180);
-  t.forward(sizex);
-  t.left(90);
-  t.forward(40);
-  t.left(90);
-  t.forward(50);
-  t.right(90);
-  t.forward(40);
-  t.right(90);
-  t.forward(sizex);
-  t.right(180);
-}
-
-void letterL(){
+void letterL(int size){
   t.right(90); 
-  t.forward(80);
+  t.forward(size);
   t.left(90);
-  t.forward(50);
+  t.forward(size);
   t.left(180);
 }
 
-void letterW(){
+void letterW(int size){
   t.right(90); 
-  t.forward(80);
+  t.forward(size);
   t.left(135);
-  t.forward(40);
+  t.forward(size);
   t.right(90);
-  t.forward(40);
+  t.forward(size);
   t.left(135);
-  t.forward(80);
+  t.forward(size);
   t.left(180); 
+}
+void goSlow(int size){
+  
+  t.x = 100;
+  t.y = 150;
+  letterG(size);
+  t.penUp();
+  t.x = 110; 
+  t.y = 150; 
+  t.penDown();
+  letterO(size);
+  t.penUp();
+ t.y = 250; 
+  t.penDown();
+  letterS(size);
+  t.penUp(); 
+ t.x = 150;
+  t.y = 250;
+  t.penDown();
+  letterL(size);
+  t.penUp(); 
+ t.x = 220;
+  t.y = 250; 
+  t.penDown();
+  letterO(size);
+  t.penUp();
+  t.x = 300;
+  t.y = 250;
+  t.penDown();
+  letterW(size);
 }
